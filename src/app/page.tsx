@@ -1,36 +1,23 @@
-import { cookies } from 'next/headers';
-import { fetchGoogleResults, GoogleSearchResult } from './api/google-search';
-import { getAiObject } from './api/google-ai';
 
-
+import SearchInputComponent from '../../components/SearchInput';
+import ButtonComponent from '../../components/Button';
+import { filterData } from '../../services/FilterData';
 
 
 
 export default async function Home() {
 
-  let results: GoogleSearchResult[] = [];
-
-
-  try {
-    results = await fetchGoogleResults("encontro de moto boca raton florida");
-  } catch (error) {
-    console.error(error);
-  }
-
-  const eventData = getAiObject(results.map((element) => {
-    return {
-      title: element.title,
-      description: element.snippet
-    }
-  }));
-  const filterData= JSON.parse(await eventData);
+ 
+  const result= await filterData();
 
 
   return (
     <>
-    <p>{filterData.name}</p>
-    <p>{filterData.date}</p>
-    <p>{filterData.description}</p>
+    <SearchInputComponent></SearchInputComponent>
+    <ButtonComponent></ButtonComponent>
+    <p>{result.name}</p>
+    <p>{result.date}</p>
+    <p>{result.description}</p>
      
     </>
   );
