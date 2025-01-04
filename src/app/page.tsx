@@ -4,6 +4,7 @@ import { SetStateAction, useState } from "react";
 import FormComponent from "../../components/Form";
 import { filterData } from "../../services/FilterData";
 import { EventShowObject } from "../../models/EventObject";
+import { setFavorite } from "../../services/Favorites";
 
 export default  function Home() {
   const [searchValue, setSearchValue] = useState(""); // State to hold search input
@@ -26,6 +27,7 @@ export default  function Home() {
           <p>{result.eventObj.description}</p>
           <p>{result.listLinks[0]}</p>
           <p>{result.listLinks[1]}</p>
+          <button onClick={()=>{setFavorite(result)}}>Favoritar</button>
         </div>
       )}
     </>
