@@ -8,7 +8,7 @@ const objectModel:EventObject={
 }
 
 export async function getAiObject(searchList:any[]) {
-    const genAI = new GoogleGenerativeAI(process.env.GOOGLE_AI_KEY||"");
+    const genAI = new GoogleGenerativeAI('AIzaSyDJKzld9mvymviocUX7CSKNwwfN21w_kwU');
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
     const prompt = "I want in the response just a pure JSON(REMOVE THE ```json ``` ) based in this one ="+JSON.stringify(objectModel)+" filtering the data in this list, try to get a name for this event and a date based in this list="+JSON.stringify(searchList)+" also create only one good description based in the list.";

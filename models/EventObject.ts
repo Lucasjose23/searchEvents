@@ -4,12 +4,9 @@ export interface EventObject{
     description:string
 }
 
-export interface LinksEventObject{
-    Link:string,
-    secLink:string
-}
+
 
 export interface EventShowObject{
     eventObj:EventObject;
-    ListLinks:LinksEventObject;
+    listLinks:string[];
 }

@@ -1,13 +1,14 @@
 import { getAiObject } from "../config/google-ai";
 import { fetchGoogleResults, GoogleSearchResult } from "../config/google-search";
+import { EventObject, EventShowObject } from "../models/EventObject";
 
-export  async function filterData(){
+export  async function filterData(search:string){
   
     let results: GoogleSearchResult[] = [];
-    
+    console.log(search)
     
       try {
-        results = await fetchGoogleResults("encontro de moto boca raton florida");
+        results = await fetchGoogleResults(search);
       } catch (error) {
         console.error(error);
       }
@@ -18,5 +19,11 @@ export  async function filterData(){
           description: element.snippet
         }
       }));
-    return JSON.parse(await eventData);;
+      const finalResult:EventShowObject={
+        eventObj:JSON.parse(await eventData),
+        listLinks:[results[0].link,results[1].link]
+        
+      }
+    
+    return finalResult;
 }
