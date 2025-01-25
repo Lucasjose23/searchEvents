@@ -42,7 +42,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - PUT INPUT AND BUTTON WORK(done)
 - CREATE A FAVORITE FUNCTION LOCALSTORAGE(done)
 - CREATE A FAVORITE PAGE(done)
-- CONFIG MAP AND CALENDARY API(done)
-- CREATE A FUNCTION TO RETURN EVENTS IN THE LOCATION OF THE USER(falta criar a chamada so search)
-- CREATE A CALENDAR TO SHOW.
 - LAYOUT

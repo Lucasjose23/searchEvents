@@ -21,7 +21,7 @@ export  async function filterData(search:string){
       }));
       const finalResult:EventShowObject={
         eventObj:JSON.parse(await eventData),
-        listLinks:[results[0].link,results[1].link]
+        listLinks:[results[0]?.link,results[1]?.link]
         
       }
     

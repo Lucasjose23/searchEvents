@@ -12,6 +12,7 @@ const FavoritePage =   () => {
             <li key={index}>
               <h3>{item.eventObj.name}</h3>
               <p>{item.eventObj.date}</p>
+              <button> Add in your calendar</button>
             </li>
           ))}
         </ul>
