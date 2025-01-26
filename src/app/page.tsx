@@ -5,31 +5,28 @@ import FormComponent from "../../components/Form";
 import { filterData } from "../../services/FilterData";
 import { EventShowObject } from "../../models/EventObject";
 import { setFavorite } from "../../services/Favorites";
+import CardComponent from "../../components/Card";
 
-export default  function Home() {
+export default function Home() {
   const [searchValue, setSearchValue] = useState(""); // State to hold search input
   const [result, setResult] = useState<EventShowObject>();
   const handleSearchSubmit = async (value: SetStateAction<string>) => {
     setSearchValue(value); // Update state with the submitted search value
-    console.log(value)
-    setResult(await filterData(value.toString())) ;
+    console.log(value);
+    setResult(await filterData(value.toString()));
   };
 
   return (
     <>
-      <h1>Search Page</h1>
-      <FormComponent onSubmit={handleSearchSubmit} />
-      {result && (
-        <div>
-          <h2>Search Result:</h2>
-          <p>{searchValue}</p>
-          <p>{result.eventObj.date}</p>
-          <p>{result.eventObj.description}</p>
-          <p>{result.listLinks[0]}</p>
-          <p>{result.listLinks[1]}</p>
-          <button onClick={()=>{setFavorite(result)}}>Favoritar</button>
+      <div className="container  text-center h-full">
+        <h1 className="mt-8">Search for events, holidays and festivities!</h1>
+        <div className="mx-auto mt-4">
+          <FormComponent onSubmit={handleSearchSubmit} />
         </div>
-      )}
+        <div className="w-full text-center mt-4">
+          {result && <CardComponent eventShow={result}></CardComponent>}
+        </div>
+      </div>
     </>
   );
 }

@@ -17,7 +17,7 @@ const FormComponent = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className=" w-auto flex justify-center items-center">
       <SearchInputComponent />
       <ButtonComponent />
     </form>
