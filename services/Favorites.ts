@@ -7,9 +7,14 @@ export function setFavorite(eventObj: EventShowObject) {
   console.log("Updated List in localStorage:", itemsList);
 }
 
-export  function getFavoriteList() {
-    
-
-  let itemsList = ( JSON.parse(localStorage.getItem("itemsList"))) || [];
+export function getFavoriteList() {
+  let itemsList = JSON.parse(localStorage.getItem("itemsList")) || [];
   return itemsList;
+}
+
+export function findFavoriteByName(name: string): boolean {
+  const favoriteList = getFavoriteList();
+  return favoriteList.find((fav) => fav?.eventObj?.name.includes(name))
+    ? true
+    : false;
 }

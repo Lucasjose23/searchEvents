@@ -43,9 +43,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - CREATE A FAVORITE FUNCTION LOCALSTORAGE(done)
 - CREATE A FAVORITE PAGE(done)
 - LAYOUT(done)
-- pagina home finalizar
+- pagina home finalizar(done)
+- cor dos links dinamica(done)
+- recarregar layout
 - pagina favoritos
 - pagina whats next
 - melhora no localstorage
-- cor dos links dinamica
+
 - botão add some quando ja tem
