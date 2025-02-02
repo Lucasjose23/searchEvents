@@ -45,9 +45,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - LAYOUT(done)
 - pagina home finalizar(done)
 - cor dos links dinamica(done)
-- recarregar layout
-- pagina favoritos
-- pagina whats next
-- melhora no localstorage
-- remover do favorito
-- botão add some quando ja tem
+- recarregar layout (done)
+- pagina favoritos(done)
+- pagina whats next(done)
+- melhora no localstorage(done)
+- remover do favorito(done)
+- botão add some quando ja tem(done)
+- refatoração
+- mobile
