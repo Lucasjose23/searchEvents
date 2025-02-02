@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <>
       <div className="container  text-center h-full">
-        <h1 className="mt-8">Search for events, holidays and festivities!</h1>
+        <h1 className="text-2xl mt-8">Search for events, holidays and festivities!</h1>
         <div className="mx-auto mt-4">
           <FormComponent onSubmit={handleSearchSubmit} />
         </div>

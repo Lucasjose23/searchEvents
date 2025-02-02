@@ -1,26 +1,24 @@
 "use client";
+import FavCardComponent from "../../../components/FavCard";
 import { getFavoriteList } from "../../../services/Favorites";
 
-const FavoritePage =   () => {
-    const favoriteList=  getFavoriteList();
-    console.log(favoriteList)
-  return <>
-    <h1>Favorite List</h1>
+const FavoritePage = () => {
+  const favoriteList = getFavoriteList();
+  console.log(favoriteList);
+  return (
+    <>
+      <h1 className="text-2xl text-center w-100 mt-8 mb-8 ">Favorite List</h1>
       {favoriteList.length > 0 ? (
-        <ul>
+        <div className="grid grid-cols-3 gap-8 mb-8">
           {favoriteList.map((item, index) => (
-            <li key={index}>
-              <h3>{item.eventObj.name}</h3>
-              <p>{item.eventObj.date}</p>
-              <button> Add in your calendar</button>
-            </li>
+            <FavCardComponent key={index} eventShow={item}></FavCardComponent>
           ))}
-        </ul>
+        </div>
       ) : (
-        <p>No favorites added yet.</p>
+        <p className="mt-8 mb-8">No favorites added yet.</p>
       )}
-
-    </>;
+    </>
+  );
 };
 
 export default FavoritePage;

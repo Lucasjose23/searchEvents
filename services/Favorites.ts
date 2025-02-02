@@ -18,3 +18,9 @@ export function findFavoriteByName(name: string): boolean {
     ? true
     : false;
 }
+
+export function removeFavorite(name: string) {
+  let itemsList = getFavoriteList();
+  itemsList = itemsList.filter((fav) => !fav?.eventObj?.name.includes(name));
+  localStorage.setItem("itemsList", JSON.stringify(itemsList));
+}

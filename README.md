@@ -49,5 +49,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - pagina favoritos
 - pagina whats next
 - melhora no localstorage
-
+- remover do favorito
 - botão add some quando ja tem

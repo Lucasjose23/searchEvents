@@ -1,9 +1,12 @@
+"use client";
+import { useState } from "react";
 import { findFavoriteByName, setFavorite } from "../services/Favorites";
 
 const CardComponent = ({ eventShow }) => {
+  const [fav,setFav]=useState(false);
 
   return (
-    <div className="max-w-sm mx-auto p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+    <div className=" bg-gray-200 max-w-sm mx-auto p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
       <a href="#">
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           {eventShow.eventObj.name}
@@ -23,9 +26,9 @@ const CardComponent = ({ eventShow }) => {
         >
           Read more
         </a>
-        {!findFavoriteByName(eventShow.eventObj.name)  ? (
+        {!findFavoriteByName(eventShow.eventObj.name) && !fav  ? (
           <button
-            onClick={() => {setFavorite(eventShow);}}
+            onClick={() => {setFavorite(eventShow);setFav(true)}}
             className="flex justify-between items-center  text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-1 ml-2 text-center me-2  dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800 "
           >
             <div>Add to Favorite List</div>
