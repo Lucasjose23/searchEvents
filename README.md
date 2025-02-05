@@ -51,5 +51,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - melhora no localstorage(done)
 - remover do favorito(done)
 - botão add some quando ja tem(done)
-- refatoração
-- mobile
+- refatoração(done)
+- mobile(done)

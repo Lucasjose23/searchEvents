@@ -19,8 +19,8 @@ export  async function fetchCalendar() {
 export  async function addEventToGoogleCalendar(
     title: string,
     description: string,
-    startDate: string, // Format: 'YYYY-MM-DDTHH:mm:ssZ'
-    endDate: string,   // Format: 'YYYY-MM-DDTHH:mm:ssZ'
+    startDate: string, 
+    endDate: string,  
   ) {
     const { GOOGLE_API_KEY, GOOGLE_CALENDAR_ID } = process.env;
   
@@ -54,7 +54,6 @@ export  async function addEventToGoogleCalendar(
       }
   
       const data = await response.json();
-      console.log("Event created successfully:", data);
       return data; 
     } catch (error: any) {
       console.error("Error creating event:", error.message);

@@ -1,4 +1,4 @@
-import { findFavoriteByName, removeFavorite, setFavorite } from "../services/Favorites";
+import {removeFavorite } from "../services/Favorites";
 
 const FavCardComponent = ({ eventShow }) => {
   return (

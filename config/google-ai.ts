@@ -1,5 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { EventObject } from "../models/EventObject";
+
 const objectModel: EventObject = {
   name: "EVENT name",
   date: "date ",

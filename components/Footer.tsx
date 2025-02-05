@@ -8,9 +8,8 @@ const Footer = () => {
             href="https://www.linkedin.com/in/lucas-jose/"
             className="hover:underline"
           >
-            Develop by
+            Develop by . Lucas José da Silva.
           </a>
-          . Lucas José da Silva.
         </span>
       </div>
     </footer>
